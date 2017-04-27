@@ -3,8 +3,16 @@
 import os
 import subprocess
 
-subprocess.check_call(['apt-get', '-y', 'install', 'htop'], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
+pkg = 'htop'
+
+print("Installing %s..." % pkg)
+subprocess.check_call(['apt-get', '-y', 'install', pkg], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
+print("Installation done.")
+print("Updating...")
 subprocess.check_call(['apt-get', '-y', 'update'], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
+print("Upgrading..")
 subprocess.check_call(['apt-get', '-y', 'upgrade'], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
+print("Cleaning...")
 subprocess.check_call(['apt-get', '-y', 'autoremove'], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
 subprocess.check_call(['apt-get', '-y', 'autoclean'], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
+print("Done.")
