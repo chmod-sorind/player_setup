@@ -3,7 +3,7 @@
 import os
 import subprocess
 
-pkg = 'htop'
+pkg = input("what package would you like to install?\n")
 
 print("Installing %s..." % pkg)
 subprocess.check_call(['apt-get', '-y', 'install', pkg], stdout=open(os.devnull, 'wb'), stderr=subprocess.STDOUT)
