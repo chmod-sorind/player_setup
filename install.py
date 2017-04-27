@@ -14,7 +14,7 @@ class BSParser(argparse.ArgumentParser):
         sys.exit(2)
 
 parser = BSParser(description='Install packages')
-parser.add_argument('-p', '--pkg', action='store_true', help='Some help for this argument')
+parser.add_argument('-p', '--pkg', action='store', help='Some help for this argument')
 args = parser.parse_args()
 
 print("Installing %s..." % args.pkg)
